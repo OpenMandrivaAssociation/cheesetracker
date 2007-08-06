@@ -1,6 +1,6 @@
 %define	name	cheesetracker
-%define	version	0.9.9
-%define release	%mkrel 8
+%define	version	0.9.14.3
+%define release	%mkrel 1
 
 Summary:	Clone of the MS-DOS program Impulse Tracker
 Name:		%{name}
@@ -11,8 +11,7 @@ Source11:	cheese_16x16.png
 Source12:	cheese_32x32.png
 Source13:	cheese_48x48.png
 Patch0:		cheesetracker-0.9.9-lib64-fix.patch
-Patch1: cheesetracker-0.9.9-gcc4.1.patch
-Patch2: cheesetracker_0.9.9-1sarge1.diff
+Patch1:         cheesetracker-0.9.14.3-scons.patch
 License:	GPL
 Group:		Sound
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -33,7 +32,6 @@ the porting of this program to other platforms extremely easy.
 %setup -q
 %patch0 -p1 -b .lib64
 %patch1 -p1
-%patch2 -p1 -b .debian
 
 %build
 unset QTDIR
@@ -72,7 +70,7 @@ EOF
 %{__install} -m644 %{SOURCE12} -D $RPM_BUILD_ROOT%{_iconsdir}/%{name}.png
 %{__install} -m644 %{SOURCE13} -D $RPM_BUILD_ROOT%{_liconsdir}/%{name}.png
 
-install -D -m 644 debian/%name.1 %buildroot%_mandir/man1/%name.1
+#install -D -m 644 debian/%name.1 %buildroot%_mandir/man1/%name.1
 
 
 %clean
@@ -86,11 +84,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)
-%doc cheesetracker/README cheesetracker/TODO cheesetracker/AUTHORS 
-%doc cheesetracker/ChangeLog cheesetracker/NEWS cheesetracker/examples/*.* 
+%doc cheesetracker/README cheesetracker/AUTHORS TODO ChangeLog
+%doc cheesetracker/examples/*.* 
 %doc cheesetracker/docs/*.*
 %{_bindir}/cheesetracker_qt
-%_mandir/man1/%name.1*
+#%_mandir/man1/%name.1*
 %{_miconsdir}/%{name}.png
 %{_iconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
