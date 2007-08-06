@@ -15,7 +15,11 @@ Patch1:         cheesetracker-0.9.14.3-scons.patch
 License:	GPL
 Group:		Sound
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires:	qt3-devel libsigc++1.2-devel jackit-devel scons
+BuildRequires:	qt3-devel 
+BuildRequires:	libsigc++1.2-devel
+BuildRequires:	jackit-devel
+BuildRequires:	scons
+BuildRequires:  libgmp-devel
 URL:		http://reduz.com.ar/cheesetronic/
 
 %description 
