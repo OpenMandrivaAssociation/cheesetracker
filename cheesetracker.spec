@@ -1,5 +1,5 @@
 %define	name	cheesetracker
-%define	version	0.9.14.3
+%define	version	0.9.15
 %define release	%mkrel 1
 
 Summary:	Clone of the MS-DOS program Impulse Tracker
@@ -18,6 +18,7 @@ BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	qt3-devel 
 BuildRequires:	libsigc++1.2-devel
 BuildRequires:	jackit-devel
+BuildRequires:	libaudiofile-devel
 BuildRequires:	scons
 BuildRequires:  libgmp-devel
 URL:		http://reduz.com.ar/cheesetronic/
