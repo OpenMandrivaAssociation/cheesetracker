@@ -13,7 +13,6 @@ Source13:	cheese_48x48.png
 Patch0:		cheesetracker-0.9.9-lib64-fix.patch
 License:	GPL
 Group:		Sound
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	qt3-devel 
 BuildRequires:	libsigc++1.2-devel
 BuildRequires:	jackit-devel
