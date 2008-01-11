@@ -46,16 +46,6 @@ rm -rf $RPM_BUILD_ROOT
 mkdir -p $RPM_BUILD_ROOT%{_bindir}
 scons install prefix=$RPM_BUILD_ROOT%{_prefix}
 rm -f $RPM_BUILD_ROOT%{_prefix}/bin/.sconsign
-mkdir -p $RPM_BUILD_ROOT%{_menudir}
-cat << EOF > $RPM_BUILD_ROOT%{_menudir}/%{name}
-?package(%{name}):\
-needs="x11"\
-section="Multimedia/Sound"\
-title="Cheesetracker"\
-longtitle="A program for creating music modules"\
-command="cheesetracker_qt"\
-icon="%{name}.png" xdg="true"
-EOF
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 [Desktop Entry]
@@ -96,6 +86,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
 %_datadir/applications/mandriva-*
-%{_menudir}/%{name}
 
 
