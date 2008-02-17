@@ -1,12 +1,12 @@
 %define	name	cheesetracker
-%define	version	0.9.15.3
+%define	version	0.9.15.4
 %define release	%mkrel 1
 
 Summary:	Clone of the MS-DOS program Impulse Tracker
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
-Source0:	http://prdownloads.sourceforge.net/cheesetronic/%{name}-%{version}.tar.gz
+Source0:	http://prdownloads.sourceforge.net/cheesetronic/%{name}-%{version}.tar.bz2
 Source11:	cheese_16x16.png
 Source12:	cheese_32x32.png
 Source13:	cheese_48x48.png
