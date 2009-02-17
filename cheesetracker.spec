@@ -1,6 +1,6 @@
 %define	name	cheesetracker
 %define	version	0.9.15.4
-%define release	%mkrel 3
+%define release	%mkrel 4
 
 Summary:	Clone of the MS-DOS program Impulse Tracker
 Name:		%{name}
@@ -11,7 +11,9 @@ Source11:	cheese_16x16.png
 Source12:	cheese_32x32.png
 Source13:	cheese_48x48.png
 Patch0:		cheesetracker-0.9.9-lib64-fix.patch
-License:	GPL
+#gw from Gentoo
+Patch1:		cheesetracker-0.9.15.3-gcc43.patch
+License:	GPLv2+
 Group:		Sound
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	qt3-devel 
@@ -36,6 +38,7 @@ the porting of this program to other platforms extremely easy.
 %prep
 %setup -q
 %patch0 -p1 -b .lib64
+%patch1 -p1
 
 %build
 unset QTDIR
