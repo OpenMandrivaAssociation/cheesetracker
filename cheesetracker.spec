@@ -1,6 +1,6 @@
 %define	name	cheesetracker
 %define	version	0.9.15.4
-%define release	%mkrel 5
+%define release	%mkrel 6
 
 Summary:	Clone of the MS-DOS program Impulse Tracker
 Name:		%{name}
