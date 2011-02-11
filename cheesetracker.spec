@@ -12,7 +12,7 @@ Source12:	cheese_32x32.png
 Source13:	cheese_48x48.png
 Patch0:		cheesetracker-0.9.9-lib64-fix.patch
 #gw from Gentoo
-Patch1:		cheesetracker-0.9.15.3-gcc43.patch
+Patch1:		cheesetracker-0.9.15.4-gcc45.patch
 License:	GPLv2+
 Group:		Sound
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -23,7 +23,7 @@ BuildRequires:	libaudiofile-devel
 BuildRequires:	libalsa-devel
 BuildRequires:	scons
 BuildRequires:  libgmp-devel
-URL:		http://reduz.com.ar/cheesetronic/
+URL:            http://cheesetracker.sourceforge.net/
 
 %description 
 Cheese Tracker is a program to create module music that aims to have
@@ -38,7 +38,7 @@ the porting of this program to other platforms extremely easy.
 %prep
 %setup -q
 %patch0 -p1 -b .lib64
-%patch1 -p1
+%patch1 -p1 -b .gcc
 
 %build
 unset QTDIR
