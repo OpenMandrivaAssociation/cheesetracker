@@ -1,0 +1,209 @@
+--- cheesetracker-0.9.15.4/cheesetracker/trackercore/file_writer.cpp.gcc	2007-11-20 09:51:38.000000000 +0100
++++ cheesetracker-0.9.15.4/cheesetracker/trackercore/file_writer.cpp	2011-02-11 11:24:02.000000000 +0100
+@@ -31,6 +31,7 @@
+  ***************************************************************************/
+ 
+ #include "file_writer.h"
++#include <string.h>
+ 
+ File_Writer::File_Writer(){
+ 
+--- cheesetracker-0.9.15.4/cheesetracker/trackercore/instrument.cpp.gcc	2007-11-20 09:51:37.000000000 +0100
++++ cheesetracker-0.9.15.4/cheesetracker/trackercore/instrument.cpp	2011-02-11 11:24:02.000000000 +0100
+@@ -31,6 +31,7 @@
+  ***************************************************************************/
+ 
+ #include <cassert>
++#include <string.h>
+ #include "instrument.h"
+ 
+ void
+--- cheesetracker-0.9.15.4/cheesetracker/trackercore/loader.h.gcc	2007-11-20 09:51:37.000000000 +0100
++++ cheesetracker-0.9.15.4/cheesetracker/trackercore/loader.h	2011-02-11 11:24:02.000000000 +0100
+@@ -43,7 +43,7 @@
+ #include "file_reader.h"
+ #include "song.h"
+ #include "components/audio/mixer.h"
+-
++#include <cstdlib>
+ #ifdef HAVE_GNU_BASENAME
+ #	include <cstring>
+ #else
+--- cheesetracker-0.9.15.4/cheesetracker/trackercore/player_data.h.gcc	2011-02-11 11:26:22.000000000 +0100
++++ cheesetracker-0.9.15.4/cheesetracker/trackercore/player_data.h	2011-02-11 11:26:25.000000000 +0100
+@@ -39,6 +39,7 @@
+ #include "common/components/audio/mixer_base.h"
+ #include "common/components/audio/tables.h"
+ #include "tracker_voice.h"
++#include <cstdlib>
+ #include <list>
+ 	using std::list;
+ 
+--- cheesetracker-0.9.15.4/cheesetracker/trackercore/voice_control.cpp.gcc	2007-11-20 09:51:38.000000000 +0100
++++ cheesetracker-0.9.15.4/cheesetracker/trackercore/voice_control.cpp	2011-02-11 11:24:02.000000000 +0100
+@@ -16,6 +16,7 @@
+ 
+ #include "voice_control.h"
+ #include "freq_conversion.h"
++#include <stdlib.h>
+ 
+ 
+ #define PAN_SURROUND 512
+--- cheesetracker-0.9.15.4/common/components/audio/mixer.cpp.gcc	2007-11-20 09:51:17.000000000 +0100
++++ cheesetracker-0.9.15.4/common/components/audio/mixer.cpp	2011-02-11 11:24:02.000000000 +0100
+@@ -35,6 +35,7 @@
+ 
+ #include "cycles.h"
+ #include "components/midi/midi_controls.h"
++#include <string.h>
+ 
+ #define CYCMSEC(m_parm) (float)( ((double)m_parm/950000000.0) * 1000.0 )
+ 
+--- cheesetracker-0.9.15.4/common/components/data/dds.cpp.gcc	2007-12-30 23:19:27.000000000 +0100
++++ cheesetracker-0.9.15.4/common/components/data/dds.cpp	2011-02-11 11:24:02.000000000 +0100
+@@ -1,4 +1,5 @@
+ #include "dds.h"
++#include <string.h>
+ 
+ using std::vector;
+ 
+--- cheesetracker-0.9.15.4/common/components/data/dds_packer.cpp.gcc	2007-11-20 09:51:18.000000000 +0100
++++ cheesetracker-0.9.15.4/common/components/data/dds_packer.cpp	2011-02-11 11:24:02.000000000 +0100
+@@ -1,4 +1,5 @@
+ #include "dds_packer.h"
++#include <string.h>
+ 
+ 
+ void DDSPacker::pack(DDS* p_struct, data& p_data, Uint32 p_offset) {
+--- cheesetracker-0.9.15.4/common/components/data/property_bridges.cpp.gcc	2007-11-20 09:51:17.000000000 +0100
++++ cheesetracker-0.9.15.4/common/components/data/property_bridges.cpp	2011-02-11 11:24:02.000000000 +0100
+@@ -31,6 +31,7 @@
+  ***************************************************************************/
+ 
+ #include "property_bridges.h"
++#include <string.h>
+ 
+ 
+ void Property_Bridge::set_display_preference(string p_pref) {
+--- cheesetracker-0.9.15.4/common/components/file/file_access.cpp.gcc	2007-11-20 09:51:19.000000000 +0100
++++ cheesetracker-0.9.15.4/common/components/file/file_access.cpp	2011-02-11 11:24:02.000000000 +0100
+@@ -14,6 +14,7 @@
+  *                                                                         *
+  ***************************************************************************/
+ #include "file_access.h"
++#include <string.h>
+ 
+ File_Manager::File_Manager() {
+ 
+--- cheesetracker-0.9.15.4/common/drivers/posix/mutex_lock_pthreads.h.gcc	2007-11-20 09:51:14.000000000 +0100
++++ cheesetracker-0.9.15.4/common/drivers/posix/mutex_lock_pthreads.h	2011-02-11 11:24:02.000000000 +0100
+@@ -39,6 +39,7 @@
+ #include <pthread.h>
+ #include <errno.h>
+ #include <string.h>
++#include <stdlib.h>
+ /**
+   *@author Juan Linietsky
+   */
+--- cheesetracker-0.9.15.4/common/drivers/posix/sound_driver_oss.cpp.gcc	2007-11-20 09:51:14.000000000 +0100
++++ cheesetracker-0.9.15.4/common/drivers/posix/sound_driver_oss.cpp	2011-02-11 11:24:02.000000000 +0100
+@@ -38,6 +38,7 @@
+ #include "sound_driver_oss.h"
+ #include "math.h"
+ #include "components/audio/sample_conversion.h"
++#include <stdlib.h>
+ 
+ 
+ 
+--- cheesetracker-0.9.15.4/common/interface__QT/helpers/property_bridge_edit.h.gcc	2011-02-11 11:28:14.000000000 +0100
++++ cheesetracker-0.9.15.4/common/interface__QT/helpers/property_bridge_edit.h	2011-02-11 11:28:51.000000000 +0100
+@@ -26,6 +26,7 @@
+ #include <qtextedit.h>
+ #include <qlineedit.h>
+ #include <qdial.h>
++#include <cstdlib>
+ #include "interface__QT/helpers/cspinbutton.h"
+ #include "interface__QT/helpers/vlabel.h"
+ 
+--- cheesetracker-0.9.15.4/common/os/path_data.cpp.gcc	2007-11-20 09:51:09.000000000 +0100
++++ cheesetracker-0.9.15.4/common/os/path_data.cpp	2011-02-11 11:24:02.000000000 +0100
+@@ -27,6 +27,7 @@
+ //
+ #include "path_data.h"
+ #include <stdio.h>
++#include <stdlib.h>
+ 
+ string Path_Data::get_home_dir() {
+ 
+--- cheesetracker-0.9.15.4/common/plugins/effects/custom/chorus_effect.cpp.gcc	2007-11-20 09:51:23.000000000 +0100
++++ cheesetracker-0.9.15.4/common/plugins/effects/custom/chorus_effect.cpp	2011-02-11 11:24:02.000000000 +0100
+@@ -10,7 +10,7 @@
+ //
+ //
+ #include "chorus_effect.h"
+-
++#include <string.h>
+ 
+ #define MIX_CALCULATE_INCREMENT_INTERVAL 8
+ 
+--- cheesetracker-0.9.15.4/common/plugins/effects/custom/effect_echo.cpp.gcc	2007-11-20 09:51:23.000000000 +0100
++++ cheesetracker-0.9.15.4/common/plugins/effects/custom/effect_echo.cpp	2011-02-11 11:24:02.000000000 +0100
+@@ -10,6 +10,7 @@
+ //
+ //
+ #include "effect_echo.h"
++#include <string.h>
+ 
+ 
+ void Effect_Echo::reset() {
+--- cheesetracker-0.9.15.4/common/plugins/effects/custom/effect_pshift.cpp.gcc	2007-11-20 09:51:23.000000000 +0100
++++ cheesetracker-0.9.15.4/common/plugins/effects/custom/effect_pshift.cpp	2011-02-11 11:24:02.000000000 +0100
+@@ -11,6 +11,7 @@
+ //
+ #include "effect_pshift.h"
+ #include "math.h"
++#include <string.h>
+ 
+ 
+ void Effect_PShift::reset() {
+--- cheesetracker-0.9.15.4/common/plugins/effects/custom/effect_stereo_fx.cpp.gcc	2007-11-20 09:51:23.000000000 +0100
++++ cheesetracker-0.9.15.4/common/plugins/effects/custom/effect_stereo_fx.cpp	2011-02-11 11:24:02.000000000 +0100
+@@ -10,6 +10,7 @@
+ //
+ //
+ #include "effect_stereo_fx.h"
++#include <string.h>
+ 
+ 
+ inline static double get_samples_from_msecs(double p_msecs,double p_mixfreq) {
+--- cheesetracker-0.9.15.4/common/plugins/effects/ladspa/ladspa_effect.cpp.gcc	2007-11-20 09:51:23.000000000 +0100
++++ cheesetracker-0.9.15.4/common/plugins/effects/ladspa/ladspa_effect.cpp	2011-02-11 11:24:02.000000000 +0100
+@@ -17,6 +17,7 @@
+ #include <sys/types.h>
+ #include <dirent.h>
+ #include <dlfcn.h>
++#include <string.h>
+ 
+ 
+ 
+--- cheesetracker-0.9.15.4/common/plugins/effects/ladspa/ladspa_effect.h.gcc	2007-11-20 09:51:23.000000000 +0100
++++ cheesetracker-0.9.15.4/common/plugins/effects/ladspa/ladspa_effect.h	2011-02-11 11:24:02.000000000 +0100
+@@ -18,8 +18,9 @@
+ 
+ #include "common/plugins/effects/ladspa/ladspa.h"
+ #include "components/audio/effect.h"
++#include <string.h>
+ #include <vector>
+-	using std::vector;
++using std::vector;
+ 
+ /**
+ @author Juan Linietsky
+--- cheesetracker-0.9.15.4/common/property_server/bridge_converter.cpp.gcc	2007-11-20 09:51:22.000000000 +0100
++++ cheesetracker-0.9.15.4/common/property_server/bridge_converter.cpp	2011-02-11 11:24:02.000000000 +0100
+@@ -1,4 +1,5 @@
+ #include "bridge_converter.h"
++#include <string.h>
+ 
+ int BridgeConverter::get_short_string(BufferControl& p_buffer, string& p_string) {
+ 

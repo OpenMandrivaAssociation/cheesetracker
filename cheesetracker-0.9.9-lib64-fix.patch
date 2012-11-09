@@ -1,0 +1,10 @@
+--- cheesetracker-0.9.9/detect.py~	2004-04-23 05:21:08.000000000 +0200
++++ cheesetracker-0.9.9/detect.py	2004-12-23 09:25:54.113086174 +0100
+@@ -152,6 +152,7 @@ def check_qt(libdata):
+ 		"/usr/lib",\
+ 		"/usr/X11R6/lib",\
+ 		"/usr/lib/qt3/lib",\
++		"/usr/lib/qt3/lib64", \
+ 		"/usr/local/lib",\
+ 		"/usr/local/lib/qt3/lib",\
+ 		"/opt/qt3/lib"\
