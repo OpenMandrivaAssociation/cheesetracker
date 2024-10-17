@@ -23,7 +23,7 @@ BuildRequires:	libaudiofile-devel
 BuildRequires:	libalsa-devel
 BuildRequires:	scons
 BuildRequires:  libgmp-devel
-URL:            http://cheesetracker.sourceforge.net/
+URL:            https://cheesetracker.sourceforge.net/
 
 %description 
 Cheese Tracker is a program to create module music that aims to have
